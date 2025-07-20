@@ -3,11 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import CoincontextProvider from './context/CoinContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <CoincontextProvider>
+        <App />
+      </CoincontextProvider>
     </BrowserRouter>
   </StrictMode>,
 )
