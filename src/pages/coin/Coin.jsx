@@ -27,7 +27,7 @@ const fetchHistoricalData = async () => {
   headers: {accept: 'application/json', 'x-cg-pro-api-key': 'CG-Ur85hTmkayrRWnRPu3ujBJNM'}
 };
 
-fetch(`https://pro-api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency}&days=10`, options)
+fetch(`https://pro-api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=10`, options)
   .then(res => res.json())
   .then(res => setHistoricalData(res))
   .catch(err => console.error(err));
@@ -53,9 +53,7 @@ fetch(`https://pro-api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_curr
   } else {
     return (
     <div className='spinner'>
-      <div className="spin">
-
-      </div>
+      <div className="spin" />
     </div>
   )
   }

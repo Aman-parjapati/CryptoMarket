@@ -4,15 +4,15 @@ import Chart from 'react-google-charts'
 
 const LineChart = ({historicalData}) => {
 
-    const [data, setData] = useState([['Date', 'Prices']]);
+    const [data, setData] = useState([["Date", "Prices"]]);
 
     useEffect(() => {
-        let datacopy = [['Date', 'Prices']];
+        let datacopy = [["Date", "Prices"]];        
         if(historicalData.prices){
             historicalData.prices.map((item) => {
-                datacopy.push([`${new Date(item[0]).toLocaleDateString.slice(0, -5)}`, item[1]])
+                datacopy.push([`${new Date(item[0]).toLocaleDateString().slice(0, -5)}`, item[1]])
             })
-            setData(datacopy)
+            setData(datacopy);
         }
     }, [historicalData])
 
