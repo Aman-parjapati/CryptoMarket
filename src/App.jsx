@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar'
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home/Home';
 import Coin from './pages/coin/Coin'
+import Footer from './components/Footer/Footer';
+import Features from './Features/Features';
 
 const App = () => {
   return (
@@ -11,7 +13,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/coin/:coinId' element={<Coin />}/>
+        <Route path='/features' element={<Features />}/>
       </Routes>
+      <Footer />
     </div>
   )
 }
